@@ -8,10 +8,10 @@ I'll probably run out of languages at some point, but it'll be fun.
 
 ## Languages I intend to use
 
+- [x] Rust (day 1)
 - [ ] JavaScript/TypeScript
 - [ ] Java
 - [ ] C
-- [x] Rust (day 1)
 - [ ] Python
 - [ ] Bash + Linux Coreutils
 - [ ] Typst
@@ -21,7 +21,3 @@ I'll probably run out of languages at some point, but it'll be fun.
 - [ ] LibreOffice Calc
 - [ ] Haskell
 - [ ] C#
-
-## Day 1 - Rust
-
-Run using `cargo run --bin day1_2 < inputs/day1`.
