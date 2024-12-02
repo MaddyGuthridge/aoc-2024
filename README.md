@@ -14,10 +14,14 @@ I'll probably run out of languages at some point, but it'll be fun.
 - [ ] C
 - [ ] Python
 - [ ] Bash + Linux Coreutils
-- [ ] Typst
 
 ### Languages I intend to learn
 
 - [ ] LibreOffice Calc
 - [ ] Haskell
 - [ ] C#
+- [ ] Go
+- [ ] Zig
+- [ ] Dart
+- [ ] Nushell
+- [ ] Typst
