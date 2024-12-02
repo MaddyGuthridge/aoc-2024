@@ -30,6 +30,8 @@ I'm saving these for later when the problems get difficult.
 
 - [x] LibreOffice Calc
 - [x] Scratch
+- [ ] SQL
+- [ ] Holy C
 - [ ] Nushell
 - [ ] Julia
 - [ ] Kotlin
@@ -39,3 +41,4 @@ I'm saving these for later when the problems get difficult.
 - [ ] Zig
 - [ ] Dart
 - [ ] Typst
+- [ ] TypeScript type system
