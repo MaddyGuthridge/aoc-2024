@@ -11,10 +11,13 @@ I'll probably run out of languages at some point, but it'll be fun.
 | Day | Language         | Parts |
 | --: | ---------------- | ----- |
 | 1   | LibreOffice Calc | ✅✅  |
+| 2   | Scratch          | ✅✅  |
 
 ## Languages I intend to use
 
 ### Languages I know already
+
+I'm saving these for later when the problems get difficult.
 
 - [ ] Rust
 - [ ] JavaScript/TypeScript
@@ -26,7 +29,8 @@ I'll probably run out of languages at some point, but it'll be fun.
 ### Languages I intend to learn
 
 - [x] LibreOffice Calc
-- [ ] Scratch
+- [x] Scratch
+- [ ] Nushell
 - [ ] Julia
 - [ ] Kotlin
 - [ ] Haskell
@@ -34,5 +38,4 @@ I'll probably run out of languages at some point, but it'll be fun.
 - [ ] Go
 - [ ] Zig
 - [ ] Dart
-- [ ] Nushell
 - [ ] Typst
