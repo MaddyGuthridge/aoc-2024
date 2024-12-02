@@ -14,6 +14,8 @@ I'll probably run out of languages at some point, but it'll be fun.
 
 ## Languages I intend to use
 
+### Languages I know already
+
 - [ ] Rust
 - [ ] JavaScript/TypeScript
 - [ ] Java
@@ -24,6 +26,9 @@ I'll probably run out of languages at some point, but it'll be fun.
 ### Languages I intend to learn
 
 - [x] LibreOffice Calc
+- [ ] Scratch
+- [ ] Julia
+- [ ] Kotlin
 - [ ] Haskell
 - [ ] C#
 - [ ] Go
