@@ -1,11 +1,9 @@
 # Day 1
 
-Rust implementation.
+LibreOffice Calc implementation.
 
 ## Running
 
-Use Cargo.
-
-`cargo run --bin part_1 < inputs/day1`
-
-`cargo run --bin part_2 < inputs/day1`
+1. Open the file in LibreOffice Calc.
+2. Paste your input into column A, split by lines.
+3. Everything should evaluate automatically.
