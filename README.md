@@ -39,6 +39,7 @@ I'm saving these for later when the problems get difficult.
 - [ ] C#
 - [ ] Go
 - [ ] Zig
+- [ ] Nim
 - [ ] Dart
 - [ ] Typst
 - [ ] TypeScript type system
