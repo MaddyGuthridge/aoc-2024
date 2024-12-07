@@ -5,7 +5,7 @@ An implementation created in the Julia programming language.
 ## Running
 
 1. Install Julia
-2. `julia main.jl inputs/input.txt`
+2. `julia part_1.jl inputs/input.txt && julia part_2.jl inputs/input.txt`
 
 ## Remarks
 
