@@ -13,6 +13,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | 1   | LibreOffice Calc | ✅✅  |
 | 2   | Scratch          | ✅✅  |
 | 3   | Typst            | ✅✅  |
+| 4   | Julia            | ✅    |
 
 ## Languages I intend to use
 
@@ -32,15 +33,15 @@ I'm saving these for later when the problems get difficult.
 - [x] LibreOffice Calc
 - [x] Scratch
 - [x] Typst
+- [x] Julia
+- [ ] Zig
 - [ ] SQL
 - [ ] Holy C
 - [ ] Nushell
-- [ ] Julia
 - [ ] Kotlin
 - [ ] Haskell
 - [ ] C#
 - [ ] Go
-- [ ] Zig
 - [ ] Nim
 - [ ] Dart
 - [ ] TypeScript type system
