@@ -11,3 +11,10 @@ few moments before saying the answers.
    "import".
 4. Select your desired input file.
 5. Click the green flag.
+
+## Remarks
+
+As expected, Scratch isn't intended for this kind of problem. I found the lack
+of scoped variables, and the inability for functions to produce return values
+especially frustrating. However, I can absolutely see how it makes for an
+excellent introduction to programming for beginners.
