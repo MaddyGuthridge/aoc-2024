@@ -1,5 +1,3 @@
-
-
 nrows(lines::Vector{String}) = length(lines)
 # 1-indexed arrays, yuck
 ncols(lines::Vector{String}) = length(lines[1])
