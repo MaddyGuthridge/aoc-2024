@@ -13,7 +13,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | 1   | LibreOffice Calc | ✅✅  |
 | 2   | Scratch          | ✅✅  |
 | 3   | Typst            | ✅✅  |
-| 4   | Julia            | ✅    |
+| 4   | Julia            | ✅✅  |
 
 ## Languages I intend to use
 
