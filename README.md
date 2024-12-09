@@ -14,6 +14,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | 2   | Scratch          | ✅✅  |
 | 3   | Typst            | ✅✅  |
 | 4   | Julia            | ✅✅  |
+| 5   | Prolog           | ✅✅  |
 
 ## Languages I intend to use
 
@@ -34,6 +35,7 @@ I'm saving these for later when the problems get difficult.
 - [x] Scratch
 - [x] Typst
 - [x] Julia
+- [x] Prolog
 - [ ] Zig
 - [ ] SQL
 - [ ] Holy C
