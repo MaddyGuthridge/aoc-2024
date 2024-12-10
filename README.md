@@ -38,7 +38,6 @@ I'm saving these for later when the problems get difficult.
 - [x] Julia
 - [x] Prolog
 - [x] Zig
-- [ ] SQL
 - [ ] Holy C
 - [ ] Nushell
 - [ ] Kotlin
@@ -47,4 +46,9 @@ I'm saving these for later when the problems get difficult.
 - [ ] Go
 - [ ] Nim
 - [ ] Dart
-- [ ] TypeScript type system
+- [ ] Swift
+- [ ] Ruby
+- [ ] Lua
+- [ ] FORTRAN
+- [ ] COBOL
+- [ ] Ada
