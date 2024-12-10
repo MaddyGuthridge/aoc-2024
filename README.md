@@ -8,13 +8,14 @@ I'll probably run out of languages at some point, but it'll be fun.
 
 ## My solutions
 
-| Day | Language         | Parts |
-| --: | ---------------- | ----- |
-| 1   | LibreOffice Calc | ✅✅  |
-| 2   | Scratch          | ✅✅  |
-| 3   | Typst            | ✅✅  |
-| 4   | Julia            | ✅✅  |
-| 5   | Prolog           | ✅✅  |
+| Day          | Language         | Parts |
+| -----------: | ---------------- | ----- |
+| [01](day01/) | LibreOffice Calc | ✅✅  |
+| [02](day02/) | Scratch          | ✅✅  |
+| [03](day03/) | Typst            | ✅✅  |
+| [04](day04/) | Julia            | ✅✅  |
+| [05](day05/) | Prolog           | ✅✅  |
+| [06](day06/) | Zig              | ✅✅  |
 
 ## Languages I intend to use
 
@@ -29,14 +30,14 @@ I'm saving these for later when the problems get difficult.
 - [ ] Python
 - [ ] Bash + Linux Coreutils
 
-### Languages I intend to learn
+### Languages I intend to try
 
 - [x] LibreOffice Calc
 - [x] Scratch
 - [x] Typst
 - [x] Julia
 - [x] Prolog
-- [ ] Zig
+- [x] Zig
 - [ ] SQL
 - [ ] Holy C
 - [ ] Nushell
