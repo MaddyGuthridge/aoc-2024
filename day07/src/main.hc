@@ -11,7 +11,12 @@
 
 // ============================================================================
 
-Bool RecurseIsEquationPossible(I32 part, I64 target, I64 current, I64 *values, I64 num_values)
+Bool RecurseIsEquationPossible(
+  I32 part,
+  I64 target,
+  I64 current,
+  I64 *values,
+  I64 num_values)
 {
   // Base case: exceeded target value
   if (current > target)
@@ -24,12 +29,22 @@ Bool RecurseIsEquationPossible(I32 part, I64 target, I64 current, I64 *values, I
     return target == current;
   }
   // First try addition
-  Bool possible = RecurseIsEquationPossible(part, target, current + values[0], values + 1, num_values - 1);
+  Bool possible = RecurseIsEquationPossible(
+    part,
+    target,
+    current + values[0],
+    values + 1,
+    num_values - 1);
   if (possible) {
     return TRUE;
   }
   // Then try multiplication
-  possible = RecurseIsEquationPossible(part, target, current * values[0], values + 1, num_values - 1);
+  possible = RecurseIsEquationPossible(
+    part,
+    target,
+    current * values[0],
+    values + 1,
+    num_values - 1);
   if (possible) {
     return TRUE;
   }
@@ -37,7 +52,12 @@ Bool RecurseIsEquationPossible(I32 part, I64 target, I64 current, I64 *values, I
   {
     I64 cat = I64Cat(current, values[0]);
     // Then try concatenation (added)
-    possible = RecurseIsEquationPossible(part, target, cat, values + 1, num_values - 1);
+    possible = RecurseIsEquationPossible(
+      part,
+      target,
+      cat,
+      values + 1,
+      num_values - 1);
     if (possible) {
       return TRUE;
     }
@@ -53,7 +73,12 @@ Bool RecurseIsEquationPossible(I32 part, I64 target, I64 current, I64 *values, I
 Bool IsEquationPossible(I32 part, Equation *e)
 {
   // Provide the first value, so that we don't begin by multiplying by zero
-  return RecurseIsEquationPossible(part, e->target, e->values[0], e->values + 1, e->num_values - 1);
+  return RecurseIsEquationPossible(
+    part,
+    e->target,
+    e->values[0],
+    e->values + 1,
+    e->num_values - 1);
 }
 
 // ============================================================================
