@@ -11,7 +11,7 @@
 
 // ============================================================================
 
-Bool RecurseIsEquationPossible(I64 target, I64 current, I64 *values, I64 num_values)
+Bool RecurseIsEquationPossible(I32 part, I64 target, I64 current, I64 *values, I64 num_values)
 {
   // Base case: exceeded target value
   if (current > target)
@@ -24,11 +24,24 @@ Bool RecurseIsEquationPossible(I64 target, I64 current, I64 *values, I64 num_val
     return target == current;
   }
   // First try addition
-  Bool possible = RecurseIsEquationPossible(target, current + values[0], values + 1, num_values - 1);
-  if (possible) return TRUE;
+  Bool possible = RecurseIsEquationPossible(part, target, current + values[0], values + 1, num_values - 1);
+  if (possible) {
+    return TRUE;
+  }
   // Then try multiplication
-  possible = RecurseIsEquationPossible(target, current * values[0], values + 1, num_values - 1);
-  if (possible) return TRUE;
+  possible = RecurseIsEquationPossible(part, target, current * values[0], values + 1, num_values - 1);
+  if (possible) {
+    return TRUE;
+  }
+  if (part == 2)
+  {
+    I64 cat = I64Cat(current, values[0]);
+    // Then try concatenation (added)
+    possible = RecurseIsEquationPossible(part, target, cat, values + 1, num_values - 1);
+    if (possible) {
+      return TRUE;
+    }
+  }
   // No combinations worked
   return FALSE;
 }
@@ -37,22 +50,16 @@ Bool RecurseIsEquationPossible(I64 target, I64 current, I64 *values, I64 num_val
  * Returns whether it is possible to produce the target value from the given
  * values.
  */
-Bool IsEquationPossible(Equation *e)
+Bool IsEquationPossible(I32 part, Equation *e)
 {
   // Provide the first value, so that we don't begin by multiplying by zero
-  return RecurseIsEquationPossible(e->target, e->values[0], e->values + 1, e->num_values - 1);
+  return RecurseIsEquationPossible(part, e->target, e->values[0], e->values + 1, e->num_values - 1);
 }
 
 // ============================================================================
 
-I64 Part1(U8 *file)
+U0 Solve(I32 part, U8 *input)
 {
-  U8 *input = FileRead(file);
-  if (input == NULL)
-  {
-    "%s: Failed to read\n", file;
-    Exit(1);
-  }
   // Produce each equation
   Bool line_start = TRUE;
   I64 total = 0;
@@ -63,10 +70,8 @@ I64 Part1(U8 *file)
       line_start = FALSE;
       // More yucky pointer arithmetic
       Equation *e = EquationFromLine(input + i);
-      PrintEquation(e);
-      if (IsEquationPossible(e))
+      if (IsEquationPossible(part, e))
       {
-        "^^^ Possible\n";
         total += e->target;
       }
       FreeEquation(e);
@@ -78,8 +83,8 @@ I64 Part1(U8 *file)
       }
     }
   }
-  Free(input);
-  return total;
+  "\n=== PART %d ===\n", part;
+  "%lld\n",total;
 }
 
 U0 Main(I64 argc, U8 **argv)
@@ -89,10 +94,15 @@ U0 Main(I64 argc, U8 **argv)
     "Usage: %s [input file]\n",argv[0];
     Exit(1);
   }
-  I64 part_1 = Part1(argv[1]);
-  "\n === PART 1 ===\n";
-  U8 *str = I64ToString(part_1);
-  "%s\n",str;
-  Free(str);
+  U8 *input = FileRead(argv[1]);
+  if (input == NULL)
+  {
+    "%s: Failed to read\n", argv[1];
+    Exit(1);
+  }
+
+  // Solve(1, input);
+  Solve(2, input);
+  Free(input);
   Exit(0);
 }

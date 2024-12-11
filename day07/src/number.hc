@@ -13,32 +13,29 @@ I64 StringToI64(U8 *str)
   return total;
 }
 
-/**
- * Convert an I64 to a Str. The Str must be freed after use.
- */
-U8 *I64ToString(I64 i)
+I32 I64NDigits(I64 i)
 {
-    // First find the number of digits
-    I32 n_digits = 1;
-    I64 copy = i;
-    while (copy > 10) {
-        copy /= 10;
-        n_digits += 1;
-    }
-    U8 *str = MAlloc(sizeof(U8) * (n_digits + 1));
-    str[n_digits] = '\0';
-
-    for (I32 digit = n_digits - 1; digit >= 0; digit--) {
-        str[digit] = '0' + i % 10;
-        i /= 10;
-    }
-
-    return str;
+  I32 n_digits = 1;
+  while (i >= 10) {
+    i /= 10;
+    n_digits += 1;
+  }
+  return n_digits;
 }
 
-// U0 Main()
-// {
-//     U8 *str = I64ToString(1234123412341234);
-//     "%s\n", str;
-//     Free(str);
-// }
+I64 TenToPower(I64 n)
+{
+  I64 result = 1;
+  for (; n > 0; n--)
+  {
+    result *= 10;
+  }
+  return result;
+}
+
+/** Concatenate the given I64 values */
+I64 I64Cat(I64 a, I64 b)
+{
+  return a * TenToPower(I64NDigits(b)) + b;
+}
+
