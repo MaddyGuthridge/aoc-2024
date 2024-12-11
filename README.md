@@ -16,6 +16,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | [04](day04/) | Julia            | ✅✅  |
 | [05](day05/) | Prolog           | ✅✅  |
 | [06](day06/) | Zig              | ✅✅  |
+| [07](day07/) | HolyC            | ✅✅  |
 
 ## Languages I intend to use
 
@@ -38,7 +39,7 @@ I'm saving these for later when the problems get difficult.
 - [x] Julia
 - [x] Prolog
 - [x] Zig
-- [ ] Holy C
+- [x] HolyC
 - [ ] Nushell
 - [ ] Kotlin
 - [ ] Haskell
