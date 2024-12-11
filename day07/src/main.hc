@@ -101,7 +101,7 @@ U0 Main(I64 argc, U8 **argv)
     Exit(1);
   }
 
-  // Solve(1, input);
+  Solve(1, input);
   Solve(2, input);
   Free(input);
   Exit(0);
