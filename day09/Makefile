@@ -2,16 +2,16 @@
 # Derived from UNSW COMP2521 Makefiles
 
 CC = clang
-CFLAGS = -Wall -Wvla -Werror -gdwarf-4
+CFLAGS = -Wall -Wvla -Werror
 
 ########################################################################
 
 .PHONY: asan msan nosan release
 
-asan: CFLAGS += -fsanitize=address,leak,undefined
+asan: CFLAGS += -g -fsanitize=address,leak,undefined
 asan: all
 
-msan: CFLAGS += -fsanitize=memory,undefined -fsanitize-memory-track-origins
+msan: CFLAGS += -g -fsanitize=memory,undefined -fsanitize-memory-track-origins
 msan: all
 
 nosan: all
