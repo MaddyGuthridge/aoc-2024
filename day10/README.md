@@ -1,6 +1,6 @@
-# Day 9 - Haskell
+# Day 10 - Haskell
 
-(An attempt at) a solution to day 9 in Haskell.
+A solution to day 10 in Haskell.
 
 ## Running
 

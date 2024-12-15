@@ -19,6 +19,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | [07](day07/) | HolyC            | ✅✅  |
 | [08](day08/) | Nim              | ✅✅  |
 | [09](day09/) | C                | ✅✅  |
+| [10](day10/) | Haskell          | ✅✅  |
 
 ## Languages I intend to use
 
@@ -45,7 +46,7 @@ I'm saving these for later when the problems get difficult.
 - [x] Nim
 - [ ] Nushell
 - [ ] Kotlin
-- [ ] Haskell
+- [x] Haskell
 - [ ] C#
 - [ ] Go
 - [ ] Dart
