@@ -69,11 +69,30 @@ trailEnds w c
     neighbors = slopeNeighbours w c
     score = trailEnds w
 
+-- | Returns the number of distinct paths to an elevation of 9 from the given
+-- point
+trailPaths :: World -> Coordinate -> Int
+trailPaths w c
+  | elevation == 9 = 1
+  | otherwise = sum $ map score neighbors
+  where
+    elevation = worldAt w c
+    neighbors = slopeNeighbours w c
+    score = trailPaths w
+
 -- | Solve part 1
 part1 :: World -> Int
 part1 w = length $ concatMap score trailheads
   where
     score = trailEnds w
+    trailheads = filter isTrailhead $ worldCoords w
+    isTrailhead = coordIsTrailhead w
+
+-- | Solve part 2
+part2 :: World -> Int
+part2 w = sum $ map score trailheads
+  where
+    score = trailPaths w
     trailheads = filter isTrailhead $ worldCoords w
     isTrailhead = coordIsTrailhead w
 
@@ -84,4 +103,7 @@ inputToWorld input = map (map digitToInt) (lines input)
 main :: IO ()
 main = do
   input <- getContents
+  putStrLn "Part 1"
   print $ part1 $ inputToWorld input
+  putStrLn "Part 2"
+  print $ part2 $ inputToWorld input
