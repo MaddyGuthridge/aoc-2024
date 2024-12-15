@@ -4,7 +4,7 @@
 
 ## Running
 
-Compile with `ghc main.hs`, then run with `./main < inputs/input.txt`
+Compile with `ghc Main.hs`, then run with `./Main < inputs/input.txt`
 
 ## Thoughts
 

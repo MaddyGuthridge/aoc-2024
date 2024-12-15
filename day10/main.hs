@@ -1,4 +1,11 @@
 import Data.Char (digitToInt)
+import Data.Set (fromList, toList)
+
+-- | Remove duplicate elements from a list by converting it to then from a Set.
+--
+-- Source: https://www.educative.io/answers/how-to-remove-duplicates-from-a-list-in-haskell#zNeBmcH23dlr8p71JfbR2
+dedup :: (Eq a, Ord a) => [a] -> [a]
+dedup = toList . fromList
 
 -- | A coordinate within the world, in the form (row, col)
 type Coordinate = (Int, Int)
@@ -15,8 +22,8 @@ type World = [[Int]]
 validCoord :: World -> Coordinate -> Bool
 validCoord w (r, c) = validRow && validCol
   where
-    validRow = 0 <= r && r < length w
-    validCol = 0 <= c && c < length (w !! r)
+    validRow = 0 <= r && r < worldHeight w
+    validCol = 0 <= c && c < worldWidth w
 
 worldHeight :: World -> Int
 worldHeight = length
@@ -25,7 +32,7 @@ worldWidth :: World -> Int
 worldWidth w = length (head w)
 
 worldCoords :: World -> [Coordinate]
-worldCoords w = [(r, c) | r <- [0 .. height], c <- [0 .. width]]
+worldCoords w = [(r, c) | r <- [0 .. height - 1], c <- [0 .. width - 1]]
   where
     height = worldHeight w
     width = worldWidth w
@@ -48,26 +55,26 @@ validSlope w x y = at y - at x == 1
 
 -- | Returns the neighbours of the given coordinate which have a valid slope
 slopeNeighbours :: World -> Coordinate -> [Coordinate]
-slopeNeighbours w c = filter valid (neighbors c)
+slopeNeighbours w c = filter valid $ neighbors c
   where
     valid c1 = validCoord w c1 && validSlope w c c1
 
--- | Returns the number of distinct paths to an elevation of 9 from the given
--- point
-trailScore :: World -> Coordinate -> Int
--- I remember there's a way to apply `sum` to the result in a pipeline-sorta
--- way but I can't remember the operator for it
-trailScore w c = sum (map score neighbors)
+-- | Returns all trail ends reachable from the given coordinate
+trailEnds :: World -> Coordinate -> [Coordinate]
+trailEnds w c
+  | elevation == 9 = [c]
+  | otherwise = dedup $ concatMap score neighbors
   where
+    elevation = worldAt w c
     neighbors = slopeNeighbours w c
-    score = trailScore w
+    score = trailEnds w
 
 -- | Solve part 1
 part1 :: World -> Int
-part1 w = sum (map score trailheads)
+part1 w = length $ concatMap score trailheads
   where
-    score = trailScore w
-    trailheads = filter isTrailhead (worldCoords w)
+    score = trailEnds w
+    trailheads = filter isTrailhead $ worldCoords w
     isTrailhead = coordIsTrailhead w
 
 -- | Convert input string into world map
@@ -77,4 +84,4 @@ inputToWorld input = map (map digitToInt) (lines input)
 main :: IO ()
 main = do
   input <- getContents
-  print (part1 (inputToWorld input))
+  print $ part1 $ inputToWorld input
