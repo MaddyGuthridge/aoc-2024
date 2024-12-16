@@ -44,9 +44,10 @@ I'm saving these for later when the problems get difficult.
 - [x] Zig
 - [x] HolyC
 - [x] Nim
+- [x] Haskell
+- [ ] Elixir
 - [ ] Nushell
 - [ ] Kotlin
-- [x] Haskell
 - [ ] C#
 - [ ] Go
 - [ ] Dart
