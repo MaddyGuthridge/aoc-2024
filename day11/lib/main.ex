@@ -4,12 +4,16 @@ defmodule Day11 do
   """
 
   alias Day11.Stone
+  alias Day11.Cache
 
   def start(_type, _args) do
-    input =
+    Cache.start_link()
+
+    {input, iterations} =
       case System.argv() do
-        [file] -> File.read!(file)
-        [] -> IO.read(:eof)
+        [file, n] -> {File.read!(file), Integer.parse(n) |> elem(0)}
+        [file] -> {File.read!(file), 1}
+        [] -> {IO.read(:eof), 1}
       end
 
     stones =
@@ -17,20 +21,12 @@ defmodule Day11 do
       |> String.split()
       |> Enum.map(fn s -> Integer.parse(s) |> elem(0) end)
 
-    part_1 =
+    answer =
       stones
-      |> Enum.map(fn stone -> calculate_after_blinks(stone, 25) end)
+      |> Enum.map(fn stone -> calculate_after_blinks(stone, iterations) end)
       |> Enum.sum()
 
-    IO.puts("Part 1: #{part_1}")
-
-    part_2 =
-      stones
-      |> Enum.map(fn stone -> calculate_after_blinks(stone, 75) end)
-      |> Enum.sum()
-
-    IO.puts("Part 2: #{part_2}")
-
+    IO.puts("#{answer}")
     {:ok, self()}
   end
 
@@ -39,8 +35,15 @@ defmodule Day11 do
   end
 
   def calculate_after_blinks(stone, n) when n > 0 do
-    Stone.blink(stone)
-    |> Stream.map(&calculate_after_blinks(&1, n - 1))
-    |> Enum.sum()
+    case Cache.get(stone, n) do
+      nil ->
+        Stone.blink(stone)
+        |> Stream.map(&calculate_after_blinks(&1, n - 1))
+        |> Enum.sum()
+        |> then(fn value -> Cache.put(stone, n, value) end)
+
+      x ->
+        x
+    end
   end
 end
