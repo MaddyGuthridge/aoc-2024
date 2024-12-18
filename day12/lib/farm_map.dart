@@ -1,15 +1,14 @@
+import 'package:day12/farm_mask.dart';
 import 'package:day12/position.dart';
 
 /// Map of the farmland
 class FarmMap {
   late List<String> _map;
-  late List<List<bool>> _visitedMap;
+  late FarmMask visited;
 
   FarmMap(String input) {
     _map = input.trim().split('\n');
-
-    _visitedMap =
-        List.generate(_map.length, (_) => List.filled(_map[0].length, false));
+    visited = FarmMask(this);
   }
 
   int height() {
@@ -26,24 +25,29 @@ class FarmMap {
 
   Iterable<Position> allPositions() sync* {
     for (var row = 0; row < height(); row++) {
-      for (var col = 0; col < width(); col++) {
-        yield Position(this, row, col);
+      for (var p in positionsInRow(row)) {
+        yield p;
       }
+    }
+  }
+
+  Iterable<Position> positionsInRow(int row) sync* {
+    for (var col = 0; col < width(); col++) {
+      yield Position(this, row, col);
+    }
+  }
+
+  Iterable<Position> positionsInCol(int col) sync* {
+    for (var row = 0; row < height(); row++) {
+      yield Position(this, row, col);
     }
   }
 
   /// Returns the crop type (letter) at Position p
   String at(Position p) {
+    if (!validPosition(p)) {
+      return '.';
+    }
     return _map[p.row][p.col];
-  }
-
-  /// Returns whether the Position p has been visited
-  bool visited(Position p) {
-    return _visitedMap[p.row][p.col];
-  }
-
-  /// Mark the given Position as visited
-  void markVisited(Position p) {
-    _visitedMap[p.row][p.col] = true;
   }
 }

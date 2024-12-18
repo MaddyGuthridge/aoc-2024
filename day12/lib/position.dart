@@ -37,18 +37,6 @@ class Position {
     return "($row, $col)";
   }
 
-  bool valid() {
-    return map.validPosition(this);
-  }
-
-  bool visited() {
-    return map.visited(this);
-  }
-
-  void mark() {
-    map.markVisited(this);
-  }
-
   /// Yields all neighbouring positions, whether they are valid or not.
   Iterable<Position> neighbours() sync* {
     for (final d in Direction.all()) {

@@ -20,7 +20,8 @@ String fromFile(String path) {
 
 void main(List<String> arguments) {
   var input = arguments.isEmpty ? fromStdin() : fromFile(arguments[0]);
-  var part_1 = solve(input);
-
-  print("Part 1: $part_1");
+  var part1Answer = part1(input);
+  print("Part 1: $part1Answer");
+  var part2Answer = part2(input);
+  print("Part 2: $part2Answer");
 }
