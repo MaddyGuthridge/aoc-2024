@@ -21,7 +21,8 @@ I'll probably run out of languages at some point, but it'll be fun.
 | [09](day09/) | C                | ✅✅  |
 | [10](day10/) | Haskell          | ✅✅  |
 | [11](day11/) | Elixir           | ✅✅  |
-| [12](day12/) | Dart             | ✅    |
+| [12](day12/) | Dart             | ✅✅  |
+| [13](day13/) | Nushell          | ✅✅  |
 
 ## Languages I intend to use
 
@@ -48,8 +49,8 @@ I'm saving these for later when the problems get difficult.
 - [x] Nim
 - [x] Haskell
 - [x] Elixir
-- [ ] Dart
-- [ ] Nushell
+- [x] Dart
+- [x] Nushell
 - [ ] Kotlin
 - [ ] C#
 - [ ] Go
