@@ -23,6 +23,7 @@ I'll probably run out of languages at some point, but it'll be fun.
 | [11](day11/) | Elixir           | ✅✅  |
 | [12](day12/) | Dart             | ✅✅  |
 | [13](day13/) | Nushell          | ✅✅  |
+| [14](day14/) | Kotlin           | ✅✅  |
 
 ## Languages I intend to use
 
@@ -51,7 +52,7 @@ I'm saving these for later when the problems get difficult.
 - [x] Elixir
 - [x] Dart
 - [x] Nushell
-- [ ] Kotlin
+- [x] Kotlin
 - [ ] C#
 - [ ] Go
 - [ ] Swift
