@@ -42,4 +42,5 @@ developers) would be enthusiastic about.
 I was expecting a similar problem to Day 13 (where the number was increased),
 so I was thrown off, especially given the imprecise nature of the question.
 
-Eventually, I decided
+Eventually, I decided to just find locations where the variance in robot
+positions was low, which worked perfectly.
